@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sippin’ Street — Fresh • Fruity • Refreshing Mocktails</title>
+<!-- Google Fonts: Fredoka & Outfit for fun, modern street cafe aesthetic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF7F2',
+              creamDark: '#F3ECE1',
+              forest: '#0E3528',
+              forestLight: '#1A4D3C',
+              lime: '#7AC943',
+              limeHover: '#68B334',
+              pink: '#F9597A',
+              yellow: '#FFC83B',
+              sky: '#38BDF8',
+              dark: '#131F1B'
+            }
+          },
+          fontFamily: {
+            heading: ['Fredoka', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            hand: ['Caveat', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Typography & Global Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF7F2;
+      color: #0E3528;
+    }
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Fredoka', sans-serif;
+    }
+    .hand-script {
+      font-family: 'Caveat', cursive;
+    }
+  </style>
+<style data-purpose="decorative-accents">
+    /* Subtle paper texture overlay and doodle styling */
+    .hero-pattern {
+      background-color: #FAF7F2;
+      background-image: radial-gradient(#0E3528 0.6px, transparent 0.6px), radial-gradient(#7AC943 0.6px, #FAF7F2 0.6px);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+      background-opacity: 0.05;
+    }
+    .menu-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px -10px rgba(14, 53, 40, 0.15);
+    }
+    .stamp-dot {
+      transition: transform 0.2s ease;
+    }
+    .stamp-dot:hover {
+      transform: scale(1.08);
+    }
+  </style>
+<!-- END: Custom Typography & Global Styles -->
+</head>
+<body class="bg-brand-cream text-brand-forest antialiased selection:bg-brand-lime selection:text-brand-forest">
+<!-- BEGIN: Top Announcement Banner -->
+<div class="bg-brand-forest text-brand-cream px-4 py-2 text-xs md:text-sm font-medium tracking-wide flex justify-center items-center gap-3" data-purpose="announcement-bar">
+<span class="inline-block animate-pulse text-brand-yellow">✨</span>
+<span>Sip • Chill • Repeat • 100% Fresh &amp; Non-Alcoholic Mocktails</span>
+<span class="hidden sm:inline text-brand-lime font-bold">•</span>
+<span class="hidden sm:inline text-brand-yellow font-medium">Counter Special: Collect 5 stamps &amp; get 1 Free!</span>
+<span class="inline-block animate-pulse text-brand-yellow">✨</span>
+</div>
+<!-- END: Top Announcement Banner -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-40 bg-brand-cream/95 backdrop-blur-md border-b border-brand-forest/10 transition-all shadow-sm">
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo & Motto -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Sippin' Street Official Logo" class="w-13 h-13 w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-brand-forest/20 shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2ThBvtpiYVextvACUnUM-hjP_OMukg0UOi9bJOPrLgPZJmjVS2RAGRT1VTzefatLeER34-x6URpiY8uXXkP3vfyM-ma3YwdZ76zc8VRkKVvpkG7p6NmDWa_l4Yfx-vhQn3lobYdlvghmCMjkP53z55fXTV3-MEWlnDHXUsd4Y2BJ8dSmUX3_wC9bYtgxfSBbq0gtZO_CJnpAQ3bGDjAxaM_kSPvyef-yQYZk3kvm9uR2nf7zhmR9uvQ"/>
+<div>
+<span class="block text-2xl md:text-3xl font-bold tracking-tight text-brand-forest leading-none font-heading">Sippin' Street</span>
+<span class="text-xs md:text-sm font-semibold text-brand-forest/70 hand-script tracking-wider">Sip • Chill • Repeat</span>
+</div>
+</a>
+<!-- Quick Action Navigation Links -->
+<div class="hidden md:flex items-center gap-8 font-semibold text-sm">
+<a class="text-brand-forest hover:text-brand-lime transition-colors" href="#menu">Our Menu</a>
+<a class="text-brand-forest hover:text-brand-lime transition-colors" href="#why-us">Why Sippin'?</a>
+<a class="text-brand-forest hover:text-brand-lime transition-colors" href="#loyalty">Stamp Card</a>
+<a class="text-brand-forest hover:text-brand-lime transition-colors" href="#visit">Visit Counter</a>
+</div>
+<!-- Header Contact / Social Link -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-forest/5 text-brand-forest hover:bg-brand-forest hover:text-brand-cream transition-all" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+<span>@sippinstreet</span>
+</a>
+<a class="px-4 py-2 bg-brand-lime text-brand-forest hover:bg-brand-limeHover font-bold rounded-full text-xs md:text-sm shadow-sm transition-all transform active:scale-95" href="#menu">
+          View Menu
+        </a>
+</div>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24 border-b border-brand-forest/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Left Hero Copy -->
+<div class="lg:col-span-7 text-center lg:text-left space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-forest text-brand-lime text-xs md:text-sm font-semibold tracking-wide shadow-sm">
+<span>❤️ Mocktails that make you smile</span>
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span>
+<span class="text-white">100% Non-Alcoholic</span>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-brand-forest leading-[1.08]">
+            Fresh <span class="text-brand-lime">•</span> Fruity <span class="text-brand-pink">•</span> <span class="underline decoration-wavy decoration-brand-yellow">Refreshing</span>
+</h1>
+<p class="text-lg md:text-xl text-brand-forest/80 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Welcome to <span class="font-bold text-brand-forest">Sippin' Street</span> — your street café for handcrafted, icy fruit mocktails made on the spot to turn your ordinary day into a celebration!
+          </p>
+<!-- CTAs & Micro Signals -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-forest hover:bg-brand-forestLight text-white rounded-full font-bold text-base shadow-lg hover:shadow-brand-forest/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0" href="#menu">
+<span>EXPLORE OUR MENU</span>
+<svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 bg-white hover:bg-brand-creamDark border-2 border-brand-forest/20 text-brand-forest rounded-full font-bold text-base transition-all" href="#visit">
+<svg class="w-5 h-5 text-brand-lime" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path></svg>
+<span>Visit Our Counter</span>
+</a>
+</div>
+<!-- Quick Highlight Badges from Shop Cart Banner -->
+<div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+<div class="p-3 bg-white/70 border border-brand-forest/10 rounded-2xl">
+<span class="text-xl">🌿</span>
+<div class="font-bold text-xs uppercase text-brand-forest mt-1">Real Fruits</div>
+</div>
+<div class="p-3 bg-white/70 border border-brand-forest/10 rounded-2xl">
+<span class="text-xl">🤍</span>
+<div class="font-bold text-xs uppercase text-brand-forest mt-1">0% Alcohol</div>
+</div>
+<div class="p-3 bg-white/70 border border-brand-forest/10 rounded-2xl">
+<span class="text-xl">❄️</span>
+<div class="font-bold text-xs uppercase text-brand-forest mt-1">Freshly Made</div>
+</div>
+<div class="p-3 bg-white/70 border border-brand-forest/10 rounded-2xl">
+<span class="text-xl">😄</span>
+<div class="font-bold text-xs uppercase text-brand-forest mt-1">Good Vibes Only</div>
+</div>
+</div>
+</div>
+<!-- Right Hero Visual Showcase -->
+<div class="lg:col-span-5 relative flex justify-center">
+<div class="relative w-full max-w-md">
+<!-- Background glow circle -->
+<div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-brand-lime/20 via-brand-yellow/30 to-brand-pink/20 blur-2xl -z-10 transform rotate-3"></div>
+<!-- Hero Shop Signage Card (from authentic cart image) -->
+<div class="bg-white rounded-3xl p-4 shadow-xl border-4 border-brand-forest overflow-hidden relative">
+<div class="aspect-[16/9] overflow-hidden rounded-2xl relative mb-4">
+<img alt="Sippin' Street Fresh Mocktail Cart Banner" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXBwXkZuKLLKNT8C1b5SOi-1pmflRFjs6CheWN-tLJ645fFD_5IOksW5IFbudQUTG18iVYhvdFRJKiVd73nPD2ogyTd3qiOMHz2ILMnRdVCq2QmtUBd8US753cbplwgU7izx4QmxzEhAFmmJI_9X8CZYTOQDUcJlALfv34A4lL8U1_fT9H_2CETFSgDOPjZc9GtfDXGkOWZzqSCiWCHpQk5v9eYb16dwE9Sn4HtQxXefN9oROtmxJupw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+<span class="text-white text-xs font-semibold uppercase tracking-wider bg-brand-forest/80 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                    Physical Street Cart &amp; Lounge
+                  </span>
+</div>
+</div>
+<div class="p-2 space-y-2 text-center">
+<div class="flex items-center justify-center gap-2">
+<span class="text-brand-pink text-lg">❤️</span>
+<span class="font-heading text-xl font-bold text-brand-forest">Mocktails that make you smile</span>
+<span class="text-brand-pink text-lg">❤️</span>
+</div>
+<p class="text-xs text-brand-forest/70 font-medium">Handcrafted live at our counter. Pure mocktail bliss with zero artificial compromise.</p>
+<div class="pt-2 flex items-center justify-around border-t border-dashed border-brand-forest/20 text-xs font-bold text-brand-forest">
+<span>⭐ Premium ₹70</span>
+<span class="text-brand-lime">•</span>
+<span>🔥 Most Selling ₹60</span>
+<span class="text-brand-lime">•</span>
+<span>💚 Key ₹50</span>
+</div>
+</div>
+</div>
+<!-- Floating Sticker Accent -->
+<div class="absolute -bottom-4 -left-4 bg-brand-yellow text-brand-forest font-heading font-bold text-xs uppercase px-4 py-2 rounded-full border-2 border-brand-forest shadow-md rotate-[-6deg]">
+              🧊 Super Chilled &amp; Fizzy
+            </div>
+<div class="absolute -top-3 -right-3 bg-brand-pink text-white font-heading font-bold text-xs px-3 py-1.5 rounded-full border-2 border-brand-forest shadow-md rotate-[8deg]">
+              100% Mocktail ❤️
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: PickYourVibeSection -->
+<section class="py-8 bg-brand-creamDark/60 border-b border-brand-forest/10" data-purpose="vibe-finder">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="text-center md:text-left">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-lime text-emerald-800">Quick Flavor Selector</span>
+<h2 class="text-xl md:text-2xl font-bold text-brand-forest font-heading">Pick Your Vibe Today:</h2>
+</div>
+<!-- Filter Pill Buttons -->
+<div class="flex flex-wrap items-center justify-center gap-2">
+<button class="filter-pill active px-4 py-2 rounded-full text-xs md:text-sm font-bold bg-brand-forest text-white shadow-sm transition-all" data-filter-btn="all" onclick="filterVibe('all')" type="button">
+            All Drinks (10)
+          </button>
+<button class="filter-pill px-4 py-2 rounded-full text-xs md:text-sm font-bold bg-white text-brand-forest border border-brand-forest/20 hover:bg-brand-forest hover:text-white transition-all" data-filter-btn="fresh" onclick="filterVibe('fresh')" type="button">
+            🍃 Fresh
+          </button>
+<button class="filter-pill px-4 py-2 rounded-full text-xs md:text-sm font-bold bg-white text-brand-forest border border-brand-forest/20 hover:bg-brand-forest hover:text-white transition-all" data-filter-btn="fruity" onclick="filterVibe('fruity')" type="button">
+            🍓 Fruity
+          </button>
+<button class="filter-pill px-4 py-2 rounded-full text-xs md:text-sm font-bold bg-white text-brand-forest border border-brand-forest/20 hover:bg-brand-forest hover:text-white transition-all" data-filter-btn="refreshing" onclick="filterVibe('refreshing')" type="button">
+            🌊 Refreshing
+          </button>
+<button class="filter-pill px-4 py-2 rounded-full text-xs md:text-sm font-bold bg-white text-brand-forest border border-brand-forest/20 hover:bg-brand-forest hover:text-white transition-all" data-filter-btn="sweet" onclick="filterVibe('sweet')" type="button">
+            🍬 Sweet
+          </button>
+<button class="filter-pill px-4 py-2 rounded-full text-xs md:text-sm font-bold bg-white text-brand-forest border border-brand-forest/20 hover:bg-brand-forest hover:text-white transition-all" data-filter-btn="classic" onclick="filterVibe('classic')" type="button">
+            👑 Classic
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: PickYourVibeSection -->
+<!-- BEGIN: MainMenuSection -->
+<main class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20" id="menu">
+<!-- Menu Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-3">
+<div class="inline-block bg-brand-forest text-brand-lime text-xs font-extrabold uppercase px-3.5 py-1 rounded-full tracking-widest">
+        Counter Digital Menu
+      </div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-forest font-heading">
+        Our Handcrafted Menu
+      </h2>
+<p class="text-sm sm:text-base text-brand-forest/70 font-medium">
+        Made on order right at our street counter with fresh fruits, chilled fizz, and lots of smiles. No artificial alcohol, only good vibes!
+      </p>
+</div>
+<!-- Quick Price Navigation Anchor Jump -->
+<div class="flex items-center justify-center gap-3">
+<a class="px-3 py-1.5 text-xs font-bold rounded-lg bg-white border border-brand-forest/20 hover:border-brand-forest text-brand-forest transition-all" href="#cat-premium">
+        ⭐ Jump to ₹70
+      </a>
+<a class="px-3 py-1.5 text-xs font-bold rounded-lg bg-white border border-brand-forest/20 hover:border-brand-forest text-brand-forest transition-all" href="#cat-mostselling">
+        🔥 Jump to ₹60
+      </a>
+<a class="px-3 py-1.5 text-xs font-bold rounded-lg bg-white border border-brand-forest/20 hover:border-brand-forest text-brand-forest transition-all" href="#cat-keysellers">
+        💚 Jump to ₹50
+      </a>
+</div>
+<!-- ============================================== -->
+<!-- CATEGORY 1: ⭐ PREMIUM — ₹70 -->
+<!-- ============================================== -->
+<section class="category-block space-y-8" id="cat-premium">
+<!-- Category Headline Banner -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-brand-forest/20 pb-4 gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-2xl">⭐</span>
+<h3 class="text-2xl sm:text-3xl font-bold font-heading text-brand-forest">Premium Collection</h3>
+</div>
+<p class="text-xs sm:text-sm text-brand-forest/70">Top-tier signatures infused with natural fruit crushes, rich toppings &amp; cold crushed ice.</p>
+</div>
+<div class="inline-flex items-center self-start sm:self-auto bg-brand-forest text-brand-yellow font-extrabold text-lg px-4 py-1 rounded-full shadow-sm">
+          ₹70 Each
+        </div>
+</div>
+<!-- Drink Grid (2 Products) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Product 1.1: Premium Blueberry -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="fruity,fresh">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Premium Blueberry layered mocktail" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="premium-blueberry.jpg"/>
+<span class="absolute top-3 left-3 bg-brand-forest text-brand-yellow text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                ⭐ Signature
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹70
+              </span>
+</div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-1">
+<h4 class="text-xl font-bold text-brand-forest font-heading">Premium Blueberry</h4>
+</div>
+<p class="text-xs sm:text-sm text-brand-forest/75 leading-relaxed">
+                Deep vibrant blueberry layers with crushed ice, fresh whole berries, infused soda &amp; refreshing mint sprig.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="text-[11px] font-semibold bg-brand-cream px-2.5 py-0.5 rounded-md text-brand-forest/80 border border-brand-forest/10">🫐 Whole Berries</span>
+<span class="text-[11px] font-semibold bg-brand-cream px-2.5 py-0.5 rounded-md text-brand-forest/80 border border-brand-forest/10">❄️ Crushed Ice</span>
+<span class="text-[11px] font-semibold bg-brand-cream px-2.5 py-0.5 rounded-md text-brand-forest/80 border border-brand-forest/10">Rich Purée</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-semibold">
+<span class="flex items-center gap-1.5 text-emerald-700">
+<span class="w-2 h-2 rounded-full bg-brand-lime"></span>
+              Freshly poured at counter
+            </span>
+<span class="text-[11px] tracking-wide uppercase text-brand-forest/60">Non-Alcoholic</span>
+</div>
+</article>
+<!-- Product 1.2: Bubblegum -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="sweet,refreshing">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Bubblegum nostalgic sweet layered mocktail" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="bubblegum.jpg"/>
+<span class="absolute top-3 left-3 bg-brand-pink text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                ❤️ Customer Favourite
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹70
+              </span>
+</div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-1">
+<h4 class="text-xl font-bold text-brand-forest font-heading">Bubblegum</h4>
+</div>
+<p class="text-xs sm:text-sm text-brand-forest/75 leading-relaxed">
+                Sweet nostalgic carnival bubblegum breeze, layered cotton-candy pink tint with an exhilarating fizzy chill.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="text-[11px] font-semibold bg-brand-cream px-2.5 py-0.5 rounded-md text-brand-forest/80 border border-brand-forest/10">🍬 Nostalgic Sweet</span>
+<span class="text-[11px] font-semibold bg-brand-cream px-2.5 py-0.5 rounded-md text-brand-forest/80 border border-brand-forest/10">Fizzy Pop</span>
+<span class="text-[11px] font-semibold bg-brand-cream px-2.5 py-0.5 rounded-md text-brand-forest/80 border border-brand-forest/10">💖 Fan Craze</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-semibold">
+<span class="flex items-center gap-1.5 text-emerald-700">
+<span class="w-2 h-2 rounded-full bg-brand-lime"></span>
+              Freshly poured at counter
+            </span>
+<span class="text-[11px] tracking-wide uppercase text-brand-forest/60">Non-Alcoholic</span>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- CATEGORY 2: 🔥 MOST SELLING — ₹60 -->
+<!-- ============================================== -->
+<section class="category-block space-y-8" id="cat-mostselling">
+<!-- Category Headline Banner -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-brand-forest/20 pb-4 gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-2xl">🔥</span>
+<h3 class="text-2xl sm:text-3xl font-bold font-heading text-brand-forest">Most Selling Flavours</h3>
+</div>
+<p class="text-xs sm:text-sm text-brand-forest/70">The crowd pullers! Thirst-quenching coolers guaranteed to brighten up your mood.</p>
+</div>
+<div class="inline-flex items-center self-start sm:self-auto bg-brand-forest text-brand-lime font-extrabold text-lg px-4 py-1 rounded-full shadow-sm">
+          ₹60 Each
+        </div>
+</div>
+<!-- Drink Grid (4 Products) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product 2.1: Blue Lagoon -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="refreshing,citrus">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Blue Lagoon electric cyan cooler with lime" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="blue-lagoon.jpg"/>
+<span class="absolute top-3 left-3 bg-brand-sky text-brand-forest text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                🔥 Bestseller
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹60
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Blue Lagoon</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Electric citrus blue with zesty lime splash and mountain-crushed ice for an ultra-chilled thrill.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🍋 Fresh Lime</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Fizzy Mint</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹60</span>
+</div>
+</article>
+<!-- Product 2.2: Watermelon -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="fruity,refreshing">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Fresh Watermelon Mocktail with crushed ice" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="watermelon.jpg"/>
+<span class="absolute top-3 left-3 bg-brand-pink text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                ❤️ Fan Favourite
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹60
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Watermelon</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Fresh juicy ruby watermelon cooler crafted with pure natural pulp, garden mint and sparkle.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🍉 Real Watermelon</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Hydrating</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹60</span>
+</div>
+</article>
+<!-- Product 2.3: Green Apple -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="fresh,citrus">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Green Apple crisp soda cooler with apple slices" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="green-apple.jpg"/>
+<span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                🍏 Crisp &amp; Tart
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹60
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Green Apple</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Tart, crisp granny smith apple sparkle balanced with cool citrus lemon mist &amp; ice crunch.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🍏 Crisp Tartness</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Zesty Soda</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹60</span>
+</div>
+</article>
+<!-- Product 2.4: Black Currant -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="fruity,sweet">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Black Currant bold mocktail punch" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="black-currant.jpg"/>
+<span class="absolute top-3 left-3 bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                🍇 Rich Berry
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹60
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Black Currant</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Bold tangy dark berry punch loaded with natural fruit sweetness and intense fizzy goodness.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🍇 Deep Berry</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Bold Flavor</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹60</span>
+</div>
+</article>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- CATEGORY 3: 💚 KEY SELLERS — ₹50 -->
+<!-- ============================================== -->
+<section class="category-block space-y-8" id="cat-keysellers">
+<!-- Category Headline Banner -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-brand-forest/20 pb-4 gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-2xl">💚</span>
+<h3 class="text-2xl sm:text-3xl font-bold font-heading text-brand-forest">Key Daily Sellers</h3>
+</div>
+<p class="text-xs sm:text-sm text-brand-forest/70">Pocket-friendly daily staples crafted with authentic local and botanical notes.</p>
+</div>
+<div class="inline-flex items-center self-start sm:self-auto bg-brand-forest text-brand-cream font-extrabold text-lg px-4 py-1 rounded-full shadow-sm">
+          ₹50 Each
+        </div>
+</div>
+<!-- Drink Grid (4 Products) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product 3.1: Mint Mojito -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="fresh,classic">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Mint Mojito with freshly muddled mint and lime" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="mint-mojito.jpg"/>
+<span class="absolute top-3 left-3 bg-brand-forest text-brand-lime text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                🌿 Classic
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹50
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Mint Mojito</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                The timeless legend! Hand-muddled fresh mint leaves, zesty lemon juice &amp; crisp sparkling soda.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🌿 Muddled Mint</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Citrus Punch</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹50</span>
+</div>
+</article>
+<!-- Product 3.2: Peach -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="sweet,fruity">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Peach iced mocktail cooler" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="peach.jpg"/>
+<span class="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                🍑 Sweet &amp; Smooth
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹50
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Peach</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Sun-ripened golden peach nectar infused with sparkling citrus ice and a silky smooth finish.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🍑 Golden Nectar</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Velvety Ice</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹50</span>
+</div>
+</article>
+<!-- Product 3.3: Paan Shot -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="classic,refreshing">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Paan Shot botanical cooling refresher" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="paan-shot.jpg"/>
+<span class="absolute top-3 left-3 bg-emerald-800 text-brand-lime text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                👑 Desi Twist
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹50
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Paan Shot</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Traditional royal betel leaf botanical infusion with cooling spices and chilled aromatic fizzy splash.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🍃 Royal Betel</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Palate Cleanser</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹50</span>
+</div>
+</article>
+<!-- Product 3.4: Kaccha Aam -->
+<article class="menu-card bg-white rounded-3xl p-5 border-2 border-brand-forest/15 flex flex-col justify-between relative overflow-hidden" data-purpose="product-card" data-vibes="refreshing,classic">
+<div class="space-y-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream">
+<img alt="Kaccha Aam raw mango spiced cooler" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" src="kaccha-aam.jpg"/>
+<span class="absolute top-3 left-3 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                🥭 Zesty Raw
+              </span>
+<span class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-brand-forest font-heading font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+                ₹50
+              </span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-forest font-heading">Kaccha Aam</h4>
+<p class="text-xs text-brand-forest/75 mt-1 leading-relaxed">
+                Tangy raw green mango spiced cooler that hits the authentic street craving with every refreshing sip.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">🥭 Raw Mango</span>
+<span class="text-[10px] font-semibold bg-brand-cream px-2 py-0.5 rounded text-brand-forest/80 border border-brand-forest/10">Chatpata Fizz</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-brand-forest/10 flex items-center justify-between text-xs text-brand-forest/70 font-medium">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> At Counter
+            </span>
+<span class="text-[10px] uppercase">₹50</span>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- END: MainMenuSection -->
+<!-- BEGIN: LoyaltyRewardsSection -->
+<section class="py-16 bg-brand-forest text-brand-cream relative overflow-hidden" id="loyalty">
+<!-- Background subtle rings -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full border-4 border-brand-forestLight/40 pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full border-4 border-brand-forestLight/40 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Loyalty Card Explainer -->
+<div class="lg:col-span-5 space-y-6 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lime text-brand-forest font-bold text-xs uppercase tracking-wider">
+<span>🎁 Sipper Rewards</span>
+</div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-white leading-tight">
+            Collect 5 Stamps,<br/><span class="text-brand-yellow">Get 1 FREE Drink!</span>
+</h2>
+<p class="text-brand-cream/80 text-sm md:text-base leading-relaxed">
+            Every time you grab any of our delicious mocktails at our street counter, get your physical stamp card stamped. Complete 5 stamps and your 6th drink is completely on the house!
+          </p>
+<div class="space-y-3 pt-2 text-left inline-block">
+<div class="flex items-center gap-3 text-sm font-semibold">
+<span class="text-brand-pink text-lg">❤️</span>
+<span>1 stamp = 1 drink (any flavour)</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-semibold">
+<span class="text-brand-lime text-lg">✨</span>
+<span>Collect 5 stamps and get your 6th drink FREE!</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-semibold">
+<span class="text-brand-yellow text-lg">🥤</span>
+<span>Valid for all drinks (regular &amp; special)</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-semibold">
+<span class="text-brand-sky text-lg">⭐</span>
+<span>Keep sipping, keep smiling!</span>
+</div>
+</div>
+</div>
+<!-- Loyalty Card Graphical Preview (Inspired by physical card) -->
+<div class="lg:col-span-7 flex justify-center">
+<div class="w-full max-w-xl bg-brand-cream text-brand-forest rounded-3xl p-6 md:p-8 shadow-2xl border-4 border-brand-yellow/30 relative">
+<!-- Card Front Visual Header -->
+<div class="flex items-center justify-between border-b-2 border-brand-forest/10 pb-4 mb-6">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="w-10 h-10 rounded-full border border-brand-forest/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZzVp_yAxh7G6kbGjxFB4W2GBHm-yH6hvC_d_43stlvQobJ2JUq7aGQUMv_P4h7vAbx9-6w-YNmtii_wZq8HvJlvB9UOE9u6zMkBgTWb_uLyMVScCzjm3zGIsjrv6G1I82sCMxlek0Z66YnUxWqUbotFQWw0z4_KxJ_IfcpArfvgaRR2P95s1QpnlYb-d3M6qS6EMCyIdtQNmtc2WGw2ucISvLuRjO6eNaKLLotcl6nJZr2YxRZt0Zmw"/>
+<div>
+<h3 class="font-heading font-bold text-lg leading-none">Sippin' Street</h3>
+<span class="text-xs text-brand-forest/70 hand-script font-bold">Loyalty Stamp Card</span>
+</div>
+</div>
+<div class="text-right">
+<span class="hand-script text-lg md:text-xl font-bold text-brand-pink">Collect 5 stamps, get 1 FREE drink! 💖</span>
+</div>
+</div>
+<!-- Stamp Row (1 to 5 + FREE DRINK) -->
+<div class="grid grid-cols-6 gap-2 sm:gap-3 py-2 text-center">
+<!-- Stamp 1 -->
+<div class="stamp-dot bg-pink-100 rounded-2xl p-2 border-2 border-dashed border-brand-pink/50 flex flex-col items-center justify-center aspect-square">
+<span class="text-xs font-bold font-heading text-brand-forest">1</span>
+<span class="text-base sm:text-xl">🥤</span>
+</div>
+<!-- Stamp 2 -->
+<div class="stamp-dot bg-amber-100 rounded-2xl p-2 border-2 border-dashed border-amber-400 flex flex-col items-center justify-center aspect-square">
+<span class="text-xs font-bold font-heading text-brand-forest">2</span>
+<span class="text-base sm:text-xl">🍹</span>
+</div>
+<!-- Stamp 3 -->
+<div class="stamp-dot bg-purple-100 rounded-2xl p-2 border-2 border-dashed border-purple-400 flex flex-col items-center justify-center aspect-square">
+<span class="text-xs font-bold font-heading text-brand-forest">3</span>
+<span class="text-base sm:text-xl">🧃</span>
+</div>
+<!-- Stamp 4 -->
+<div class="stamp-dot bg-teal-100 rounded-2xl p-2 border-2 border-dashed border-teal-400 flex flex-col items-center justify-center aspect-square">
+<span class="text-xs font-bold font-heading text-brand-forest">4</span>
+<span class="text-base sm:text-xl">🍋</span>
+</div>
+<!-- Stamp 5 -->
+<div class="stamp-dot bg-orange-100 rounded-2xl p-2 border-2 border-dashed border-orange-400 flex flex-col items-center justify-center aspect-square">
+<span class="text-xs font-bold font-heading text-brand-forest">5</span>
+<span class="text-base sm:text-xl">🍓</span>
+</div>
+<!-- FREE DRINK STAMP 6 -->
+<div class="stamp-dot bg-brand-forest text-brand-yellow rounded-2xl p-1.5 border-2 border-brand-yellow flex flex-col items-center justify-center aspect-square shadow-md">
+<span class="text-[10px] font-extrabold uppercase tracking-tighter">FREE</span>
+<span class="text-lg sm:text-xl animate-pulse">🎉</span>
+</div>
+</div>
+<!-- Card Bottom Message -->
+<div class="mt-6 pt-4 border-t border-brand-forest/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+<span class="font-bold text-brand-forest flex items-center gap-1.5">
+<span class="text-brand-pink">❤️</span> Good Drinks • Better Days
+              </span>
+<span class="text-brand-forest/70 font-semibold">
+                Ask the barista for your physical card on your next visit!
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LoyaltyRewardsSection -->
+<!-- BEGIN: WhyUsSection -->
+<section class="py-16 md:py-24 bg-brand-cream border-b border-brand-forest/10" id="why-us">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+<div class="text-center max-w-2xl mx-auto space-y-3">
+<span class="text-xs font-bold tracking-widest uppercase text-brand-lime text-emerald-800">The Sippin' Standard</span>
+<h2 class="text-3xl sm:text-4xl font-bold text-brand-forest font-heading">
+          Why People Love Sippin' Street
+        </h2>
+<p class="text-sm sm:text-base text-brand-forest/70">
+          We built this brand to celebrate pure street happiness. Here is what we promise in every single cup:
+        </p>
+</div>
+<!-- 4 Pillars Grid (matching authentic cart icons) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-white rounded-3xl p-6 border-2 border-brand-forest/10 hover:border-brand-lime transition-all text-center space-y-3">
+<div class="w-14 h-14 mx-auto rounded-2xl bg-brand-lime/20 flex items-center justify-center text-3xl">
+            🌿
+          </div>
+<h3 class="text-xl font-bold font-heading text-brand-forest">Real Fruits</h3>
+<p class="text-xs text-brand-forest/75 leading-relaxed">
+            Hand-selected, authentic fruit pulp and pure zest. No harsh syrups, only genuine fruity goodness that pops.
+          </p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-white rounded-3xl p-6 border-2 border-brand-forest/10 hover:border-brand-pink transition-all text-center space-y-3">
+<div class="w-14 h-14 mx-auto rounded-2xl bg-brand-pink/20 flex items-center justify-center text-3xl">
+            🤍
+          </div>
+<h3 class="text-xl font-bold font-heading text-brand-forest">No Alcohol</h3>
+<p class="text-xs text-brand-forest/75 leading-relaxed">
+            100% Mocktail goodness for everyone. Kids, teens, families, and friends can all chill freely together.
+          </p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-white rounded-3xl p-6 border-2 border-brand-forest/10 hover:border-brand-yellow transition-all text-center space-y-3">
+<div class="w-14 h-14 mx-auto rounded-2xl bg-brand-yellow/20 flex items-center justify-center text-3xl">
+            ❄️
+          </div>
+<h3 class="text-xl font-bold font-heading text-brand-forest">Freshly Made</h3>
+<p class="text-xs text-brand-forest/75 leading-relaxed">
+            Never premixed or sitting around. Muddled, shaken, and poured live with mountain-chilled crushed ice.
+          </p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-white rounded-3xl p-6 border-2 border-brand-forest/10 hover:border-brand-sky transition-all text-center space-y-3">
+<div class="w-14 h-14 mx-auto rounded-2xl bg-brand-sky/20 flex items-center justify-center text-3xl">
+            😄
+          </div>
+<h3 class="text-xl font-bold font-heading text-brand-forest">Good Vibes Only</h3>
+<p class="text-xs text-brand-forest/75 leading-relaxed">
+            A welcoming street corner vibe where great conversation, cheerful music, and refreshing drinks meet.
+          </p>
+</div>
+</div>
+<!-- About Story Snippet -->
+<div class="bg-brand-forest text-brand-cream rounded-3xl p-8 md:p-10 max-w-4xl mx-auto shadow-md">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<img alt="Logo" class="w-24 h-24 rounded-full border-4 border-brand-lime flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCap9Kez7NTg-YSQ346SSDSah4fCl0lw6xvoA0tOU4c1C63SrElZ1zrMHr4kMJ25P1JXwtXYFBcP1r9LC88JcnzS6uaIeIZYL3eWkfaAq-4ha9N82fydGofxA45C-xEBSG7XgH7YysYpo1woqOpF0BzjpQmzXx6J77Hy4uGLGLkD7mDg1cSaDf5ICrMDUb1GP06en3PeiQC0dU-ifJWCaz6aqEbLdLiD8ND03rrSgXeQsOnwKykMhkig"/>
+<div class="space-y-3 text-center md:text-left">
+<span class="hand-script text-2xl text-brand-yellow font-bold">Our Simple Story</span>
+<p class="text-sm md:text-base leading-relaxed text-brand-cream/90">
+              "Sippin’ Street is your go-to neighbourhood destination for handcrafted, ice-cold mocktails. Born from a love for vibrant street flavours and good vibes, we squeeze, mix, and chill the freshest fruit blends to brighten up your day. Sip • Chill • Repeat."
+            </p>
+<div class="font-heading font-bold text-xs uppercase tracking-wider text-brand-lime">
+              Handcrafted With Love in Town ❤️
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WhyUsSection -->
+<!-- BEGIN: VisitOurCounterSection -->
+<section class="py-16 md:py-24 bg-white border-b border-brand-forest/10" id="visit">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Counter Visit Info -->
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-forest text-brand-lime text-xs font-bold uppercase tracking-wider">
+<span>📍 Physical Counter</span>
+</div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-brand-forest">
+            Visit Our Street Counter
+          </h2>
+<p class="text-base text-brand-forest/80 leading-relaxed">
+            Drop by our vibrant outdoor cart and mocktail lounge to enjoy freshly poured mocktails, live fruit muddling, and warm street hospitality.
+          </p>
+<!-- Store Metadata Blocks -->
+<div class="space-y-4 pt-2">
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-cream border border-brand-forest/10">
+<div class="p-3 bg-brand-forest text-brand-lime rounded-xl text-lg">
+                🕒
+              </div>
+<div>
+<h4 class="font-bold text-brand-forest font-heading">Operating Hours</h4>
+<p class="text-xs sm:text-sm text-brand-forest/75 mt-0.5">Open Daily: <strong>11:00 AM – 11:00 PM</strong></p>
+<span class="inline-block mt-1 text-[11px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">
+                  Counter Open Now • Chilled &amp; Serving
+                </span>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-cream border border-brand-forest/10">
+<div class="p-3 bg-brand-forest text-brand-yellow rounded-xl text-lg">
+                📍
+              </div>
+<div>
+<h4 class="font-bold text-brand-forest font-heading">Location</h4>
+<p class="text-xs sm:text-sm text-brand-forest/75 mt-0.5">Main Food Street &amp; Mocktail Lounge, Near City Square</p>
+<a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-forest hover:text-brand-lime mt-2 underline" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span>Open in Google Maps</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-cream border border-brand-forest/10">
+<div class="p-3 bg-brand-forest text-brand-pink rounded-xl text-lg">
+                💬
+              </div>
+<div>
+<h4 class="font-bold text-brand-forest font-heading">Direct Counter Contact</h4>
+<p class="text-xs sm:text-sm text-brand-forest/75 mt-0.5">Got party orders or quick queries? Reach out directly:</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-sm transition-all" href="https://whatsapp.com" rel="noopener noreferrer" target="_blank">
+<span>WhatsApp Counter</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-forest hover:bg-brand-forestLight text-white rounded-lg text-xs font-bold shadow-sm transition-all" href="tel:1234567890">
+<span>Call Counter</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Counter Atmosphere / Social Cards -->
+<div class="lg:col-span-6 space-y-6">
+<div class="bg-brand-cream rounded-3xl p-6 border-2 border-brand-forest/10 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xl">📸</span>
+<h3 class="font-heading font-bold text-lg text-brand-forest">Tag Us on Instagram</h3>
+</div>
+<a class="text-xs font-bold text-brand-pink hover:underline" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+                @sippinstreet
+              </a>
+</div>
+<!-- Polaroid Style Mockup Showcase -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white p-2 rounded-2xl shadow-sm border border-brand-forest/10">
+<img alt="Berry Mocktail snapshot" class="w-full aspect-square object-cover rounded-xl mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9-BgYa9rb6XAW3cbyWzcBd1SM-wGJyZ8CKH1pdKSTxIscAgL_9IUk_cLOph16hGWHU7C3UJpP7OSNLOfg0tlfE92iBZN7Z-JO6gZzp81RJXOaUbMcHPV-8yc7fHcurcwuExpA1wD4xmMmfU2pkPhjTF4ueuKPtCVMyQ1-PA_aGnuqmAeK0HZfM-YO_Axfg7Q9Mxd7L3mLw-3CBUYdb_lYxMvY0CM3TMqjzNITLoBy"/>
+<p class="text-[11px] font-bold text-center text-brand-forest">Berry Bliss Vibes 🫐</p>
+</div>
+<div class="bg-white p-2 rounded-2xl shadow-sm border border-brand-forest/10">
+<img alt="Blue Lagoon snapshot" class="w-full aspect-square object-cover rounded-xl mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAW3jm6eCVhwNEuFX2whwKDmukK1lVBJ4zVmzs31JVn-1XuSiL0rGNI3zx4wr7yGaoWfIKfXaz10inuSJZeGWCxvbMuRoAUYZwLVpkGtAejNsnGjJhFMVirhMyqll_bklKJ4f5cTTwXfFu3udlIsovkR6EGJqn3Qx6mFJ1yT2sK4N7guy_Em40uv_hq8Sm2iY_y_CSSx21MVfIvE597iNyulpD71LfdDAOq7wbbPJG"/>
+<p class="text-[11px] font-bold text-center text-brand-forest">Electric Chill 🌊</p>
+</div>
+</div>
+<div class="text-center pt-2">
+<p class="text-xs text-brand-forest/70 hand-script text-base">"Good Drinks • Better Days • Tag @sippinstreet for a repost!"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: VisitOurCounterSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-dark text-brand-cream py-12 border-t-4 border-brand-lime">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+<!-- Brand identity in footer -->
+<div class="flex items-center gap-3">
+<img alt="Logo" class="w-12 h-12 rounded-full border border-brand-lime" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiS0zf9vGv0z5WFRH9Kq5afeZl2v1XbTDChC01CsJXIhgV4904yNlfcc7w8EG_V-bZd-i33ZMLS5Isy8Z_pHzKYteG6Y4PJk--iX9o6lGnY07Jjie1bPKm_yT6orcf238Rv5cfWR034U4HGfoulOI2eZaei73jlZJpMDoQmitQ21gQaCEPy-46lBV_Y5Mld9cMmOaGz6hiOWMpr6EvEu-akd0BVKjRhyAxH-_zX41_IEeZxsevXXUfSA"/>
+<div>
+<span class="font-heading font-bold text-2xl tracking-tight text-white block">Sippin' Street</span>
+<span class="text-xs text-brand-lime hand-script text-base">Sip • Chill • Repeat</span>
+</div>
+</div>
+<!-- Quick footer menu links -->
+<div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-semibold text-brand-cream/80">
+<a class="hover:text-brand-lime transition-colors" href="#menu">Menu (₹70, ₹60, ₹50)</a>
+<a class="hover:text-brand-lime transition-colors" href="#loyalty">Stamp Card Reward</a>
+<a class="hover:text-brand-lime transition-colors" href="#why-us">Our Promise</a>
+<a class="hover:text-brand-lime transition-colors" href="#visit">Store Directions</a>
+</div>
+<!-- Instagram Badge -->
+<div>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-brand-cream text-xs font-bold transition-all" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<span>Follow @sippinstreet</span>
+</a>
+</div>
+</div>
+<!-- Copyright & Non-Alcoholic Badge -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-cream/60">
+<p>© 2026 Sippin' Street Mocktails. All rights reserved. Pure Street Beverages.</p>
+<p class="flex items-center gap-1.5">
+<span>Crafted with</span>
+<span class="text-brand-pink">❤️</span>
+<span>for happy sippers everywhere.</span>
+</p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: Interactive Filter Script -->
+<script data-purpose="menu-filter-behavior">
+    /**
+     * Filters the product cards by vibe tags seamlessly
+     * @param {string} vibe - The selected vibe tag ('all', 'fresh', 'fruity', 'refreshing', 'sweet', 'classic')
+     */
+    function filterVibe(vibe) {
+      // Update button active styling
+      const buttons = document.querySelectorAll('.filter-pill');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter-btn') === vibe) {
+          btn.classList.add('bg-brand-forest', 'text-white');
+          btn.classList.remove('bg-white', 'text-brand-forest');
+        } else {
+          btn.classList.remove('bg-brand-forest', 'text-white');
+          btn.classList.add('bg-white', 'text-brand-forest');
+        }
+      });
+
+      // Filter product articles
+      const cards = document.querySelectorAll('[data-purpose="product-card"]');
+      cards.forEach(card => {
+        const vibes = card.getAttribute('data-vibes') || '';
+        if (vibe === 'all' || vibes.includes(vibe)) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    }
+  </script>
+<!-- END: Interactive Filter Script -->
+</body></html>
